@@ -112,10 +112,6 @@ $ trailz -r 25 -c 25 -a Sidewinder --verbose -o maze.txt
 
 This will create a 25x25 maze using the [Sidewinder](docs/lib/sidewinder.md) algorithm.  The contents will be printed to the terminal and also written to a file named `maze.txt` (the default).
 
-```
-$ trailz
-```
-
 ##### Arguments
 
 - `-r|--rows {#}` - the number of rows to create in the maze.  The default is 10.
