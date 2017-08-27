@@ -1,0 +1,50 @@
+{
+  "name": "trailblazer",
+  "version": "0.0.2",
+  "author": "jmquigley <jmquigley@outlook.com>",
+  "description": "A library for generating mazes",
+  "private": false,
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmquigley/trailblazer"
+  },
+  "bugs": {
+    "url": "https://github.com/jmquigley/trailblazer/issues"
+  },
+  "engines": {
+    "node": ">=7.5"
+  },
+  "dependencies": {
+    "util.pkgwrap": "0.0.59",
+    "util.toolbox": "^0.0.42",
+    "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "3.0.3",
+    "@types/node": "^8.0.7",
+    "@types/yargs": "^8.0.0",
+    "ava": "^0.20.0",
+    "coveralls": "^2.13.1",
+    "fs-extra": "^3.0.1",
+    "nyc": "^11.0.3",
+    "tslint": "^5.4.3",
+    "typescript": "^2.4.1"
+  },
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "bin": {
+    "trailblazer": "./cli.js"
+  },
+  "scripts": {
+    "all": "yarn install && yarn run clean && yarn run lint && yarn run build && yarn run docs && yarn test && yarn run report",
+    "build": "pkgwrap --build",
+    "clean": "pkgwrap --clean",
+    "coverage": "pkgwrap --coverage",
+    "docs": "pkgwrap --docs",
+    "lint": "pkgwrap --lint",
+    "postinstall": "pkgwrap --postinstall",
+    "report": "pkgwrap --reporting",
+    "test": "pkgwrap --testing --ava"
+  }
+}
