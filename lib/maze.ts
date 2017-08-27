@@ -16,6 +16,8 @@
 
 'use strict';
 
+import {sprintf} from 'sprintf-js';
+import {nl} from 'util.toolbox';
 import {
 	Algorithm,
 	AlgorithmType,
@@ -58,6 +60,25 @@ export class Maze {
 	 */
 	get repr(): number[][] {
 		return this._grid.repr;
+	}
+
+	/**
+	 * @return {string} a string representation of the 2D repr array
+	 */
+	get srepr(): string {
+		let line: string[];
+		const repr = this._grid.repr;
+		const out: string[] = [];
+
+		for (let row = 0; row < this.rows; row++) {
+			line = [];
+			for (let col = 0; col < this.cols; col++) {
+				line.push(sprintf('%3d', repr[row][col]));
+			}
+			out.push(line.join(','));
+		}
+
+		return out.join(nl);
 	}
 
 	/**

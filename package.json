@@ -16,20 +16,22 @@
     "node": ">=7.5"
   },
   "dependencies": {
-    "util.pkgwrap": "0.0.59",
+    "fs-extra": "^4.0.1",
+    "sprintf-js": "^1.1.1",
+    "util.pkgwrap": "0.0.67",
     "util.toolbox": "^0.0.42",
     "yargs": "^8.0.2"
   },
   "devDependencies": {
-    "@types/fs-extra": "3.0.3",
-    "@types/node": "^8.0.7",
-    "@types/yargs": "^8.0.0",
-    "ava": "^0.20.0",
+    "@types/fs-extra": "4.0.0",
+    "@types/node": "^8.0.25",
+    "@types/sprintf-js": "0.0.27",
+    "@types/yargs": "^8.0.2",
+    "ava": "^0.22.0",
     "coveralls": "^2.13.1",
-    "fs-extra": "^3.0.1",
-    "nyc": "^11.0.3",
-    "tslint": "^5.4.3",
-    "typescript": "^2.4.1"
+    "nyc": "^11.1.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.4.2"
   },
   "main": "./index.js",
   "types": "./index.d.ts",

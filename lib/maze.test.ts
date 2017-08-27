@@ -10,8 +10,9 @@ test('Creates an Maze object instance using BinaryTree', t => {
 	t.is(maze.rows, 10);
 	t.is(maze.algorithm, AlgorithmType.BinaryTree);
 	t.true(typeof maze.string === 'string');
+	t.truthy(maze.repr);
 	console.log(`BinaryTree(10,10)\n${maze.string}`);
-	console.log(maze.repr);
+	console.log(maze.srepr);
 
 	maze.rebuild(AlgorithmType.BinaryTree);
 	t.is(maze.cols, 10);
@@ -24,7 +25,7 @@ test('Creates an Maze object instance using BinaryTree', t => {
 	t.is(maze.rows, 5);
 	t.is(maze.algorithm, AlgorithmType.BinaryTree);
 	console.log(`BinaryTree(5,5) resize =>\n${maze.string}`);
-	console.log(maze.repr);
+	console.log(maze.srepr);
 });
 
 test('Create a maze with bad parameters for sizing', t => {
@@ -35,7 +36,7 @@ test('Create a maze with bad parameters for sizing', t => {
 	t.is(maze.rows, 1);
 	t.is(maze.algorithm, AlgorithmType.BinaryTree);
 	console.log(`BinaryTree(1,1) resize =>\n${maze.string}`);
-	console.log(maze.repr);
+	console.log(maze.srepr);
 });
 
 test('Creates a Maze object instance using Sidewinder', t => {
@@ -46,5 +47,5 @@ test('Creates a Maze object instance using Sidewinder', t => {
 	t.is(maze.algorithm, AlgorithmType.Sidewinder);
 	t.true(typeof maze.string === 'string');
 	console.log(`Sidewinder(10,10)\n${maze.string}`);
-	console.log(maze.repr);
+	console.log(maze.srepr);
 });

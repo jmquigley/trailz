@@ -11,6 +11,12 @@
 This library is based on the algorithms from the book [Mazes for Programmers: Code Your Own Twisty Little Passages](https://www.amazon.com/Mazes-Programmers-Twisty-Little-Passages/dp/1680500554/ref=sr_1_1?ie=UTF8&qid=1503783819&sr=8-1&keywords=Mazes+for+programmers), by Jamis Buck
 
 
+## Requirements
+
+- [Node](https://nodejs.org/en/) v7.5+
+- [Yarn](https://yarnpkg.com) v0.28.4
+
+
 ## Installation
 
 This module uses [yarn](https://yarnpkg.com/en/) to manage dependencies and run scripts for development.
@@ -24,6 +30,7 @@ To build the app and run all tests:
 ```
 $ yarn run all
 ```
+
 
 ## Overview
 
@@ -52,14 +59,37 @@ maze.resize(5, 5)
 
 This will resize the grid to a 5x5 maze and reapply the algorithm.
 
+### CLI
 
-### API
+The command line interface allows one to create mazes and print their contents to a text file.
+
+```
+$ trailz -r 25 -c 25 -a Sidewinder --verbose -o maze.txt
+```
+
+This will create a 25x25 maze using the [Sidewinder](docs/lib/sidewinder.md) algorithm.  The contents will be printed to the terminal and also written to a file named `maze.txt` (the default).
+
+```
+$ trailz
+```
+
+##### Arguments
+
+- `-r|--rows {#}` - the number of rows to create in the maze.  The default is 10.
+- `-c|--cols {#}` - the number of columns to create in the maze.  The default is 10.
+- `-a|--algorithm {name}` - the string name of the algorithm to use when generating the maze (see the list below).  The current default is the `BinaryTree` algorithm.
+- `-v|--verbose` - will dump the contents of the generated maze to stdout.  Not shown by default.
+- `-o|--output {filename}` - where to dump the contents of the maze (text file).  The file `maze.txt` is used by default and will be overwritten on successive runs.
+
+
+## API
 
 - [Cell](docs/lib/cell.md)
 - [Grid](docs/lib/grid.md)
 - [Maze](docs/lib/maze.md)
 
-### Algorithms
+
+## Algorithms
 
 - [BinaryTree](docs/lib/binarytree.md)
 - [Sidewinder](docs/lib/sidewinder.md)
