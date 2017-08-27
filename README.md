@@ -27,7 +27,7 @@ $ yarn run all
 
 ## Overview
 
-To use the library create an instance of the `Maze` class with the size requirements and algorithm type.  It will automatically generate the maze and save it within a grid.  The contents of the maze can be retrieved by using the `.string` or `.array` properties to get the contents.  The `.string` will give an ASCII string representation of the maze.  The `.array` method will return a two dimensional array that contains the representation of that cell.  This representation is 1 of 16 possible representations for a cell (for drawing purposes).
+To use the library create an instance of the `Maze` class with the size requirements and algorithm type.  It will automatically generate the maze and save it within a grid.  The contents of the maze can be retrieved by using the `.string` or `.repr` properties to get the contents.  The `.string` will give an ASCII string representation of the maze.  The `.repr` method will return a two dimensional array that contains the representation of that cell.  This representation is 1 of 16 possible representations for a cell (for drawing purposes).
 
 ### Usage
 

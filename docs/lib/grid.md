@@ -8,6 +8,7 @@ This class represents an array of cells by row and column
 * [Grid](#Grid)
     * [.cols](#Grid+cols) ⇒ <code>number</code>
     * [.random](#Grid+random) ⇒ <code>Cell</code>
+    * [.repr](#Grid+repr) ⇒ <code>Array.&lt;Array.&lt;number&gt;&gt;</code>
     * [.rows](#Grid+rows) ⇒ <code>number</code>
     * [.size](#Grid+size) ⇒ <code>number</code>
     * [.at(row, col)](#Grid+at) ⇒ <code>Cell</code>
@@ -23,6 +24,11 @@ This class represents an array of cells by row and column
 ### grid.random ⇒ <code>Cell</code>
 **Kind**: instance property of [<code>Grid</code>](#Grid)  
 **Returns**: <code>Cell</code> - a random cell location from the grid  
+<a name="Grid+repr"></a>
+
+### grid.repr ⇒ <code>Array.&lt;Array.&lt;number&gt;&gt;</code>
+**Kind**: instance property of [<code>Grid</code>](#Grid)  
+**Returns**: <code>Array.&lt;Array.&lt;number&gt;&gt;</code> - a byte representation of the current maze.  
 <a name="Grid+rows"></a>
 
 ### grid.rows ⇒ <code>number</code>

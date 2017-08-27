@@ -51,9 +51,8 @@ export class Maze {
 	/**
 	 * @return {number[][]} a 2D array that represents how each cell is drawn
 	 */
-	get array(): number[][] {
-		// TODO: implement array function within Maze
-		return null;
+	get repr(): number[][] {
+		return this._grid.repr;
 	}
 
 	/**

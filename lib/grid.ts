@@ -11,6 +11,7 @@ export class Grid {
 	private _cols: number;
 	private _rows: number;
 	private _grid: Cell[][];
+	private _repr: number[][];
 
 	constructor(rows: number, cols: number) {
 		this._rows = rows;
@@ -19,12 +20,15 @@ export class Grid {
 		let cell;
 
 		this._grid = new Array(this.rows);
+		this._repr = new Array(this.rows);
 		for (let row = 0; row < this.rows; row++) {
 			this._grid[row] = new Array(cols);
+			this._repr[row] = new Array(cols);
 
 			for (let col = 0; col < cols; col++) {
 				cell = new Cell(row, col);
 				this._grid[row][col] = cell;
+				this._repr[row][col] = cell.repr;
 			}
 		}
 
@@ -46,6 +50,19 @@ export class Grid {
 		const col: number = getRandomIntInclusive(0, this.cols - 1);
 
 		return this.at(row, col);
+	}
+
+	/**
+	 * @return {number[][]} a byte representation of the current maze.
+	 */
+	get repr(): number[][] {
+		for (let row = 0; row < this.rows; row++) {
+			for (let col = 0; col < this.cols; col++) {
+				this._repr[row][col] = this.at(row, col).repr;
+			}
+		}
+
+		return this._repr;
 	}
 
 	/**
