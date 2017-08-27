@@ -1,9 +1,17 @@
+import {BinaryTree} from './binarytree';
 import {Grid} from './grid';
+import {Sidewinder} from './sidewinder';
 
 export interface Algorithm {
-	process(grid: Grid): void;
+	process(grid: Grid): Grid;
 }
 
 export enum AlgorithmType {
-	BinaryTree = 'BinaryTree'
+	BinaryTree = 'BinaryTree',
+	Sidewinder = 'Sidewinder'
 }
+
+export {
+	BinaryTree,
+	Sidewinder
+};

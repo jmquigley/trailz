@@ -16,8 +16,12 @@
 
 'use strict';
 
-import {Algorithm, AlgorithmType} from './algorithm';
-import {BinaryTree} from './binarytree';
+import {
+	Algorithm,
+	AlgorithmType,
+	BinaryTree,
+	Sidewinder
+} from './algorithm';
 import {Grid} from './grid';
 
 interface Algorithms {
@@ -28,7 +32,8 @@ export class Maze {
 
 	private _algorithm: AlgorithmType;
 	private _algorithms: Algorithms = {
-		[AlgorithmType.BinaryTree]: new BinaryTree()
+		[AlgorithmType.BinaryTree]: new BinaryTree(),
+		[AlgorithmType.Sidewinder]: new Sidewinder()
 	};
 
 	private _grid: Grid;

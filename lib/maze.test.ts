@@ -37,3 +37,14 @@ test('Create a maze with bad parameters for sizing', t => {
 	console.log(`BinaryTree(1,1) resize =>\n${maze.string}`);
 	console.log(maze.repr);
 });
+
+test('Creates a Maze object instance using Sidewinder', t => {
+	const maze = new Maze(10, 10, AlgorithmType.Sidewinder);
+	t.truthy(maze);
+	t.is(maze.cols, 10);
+	t.is(maze.rows, 10);
+	t.is(maze.algorithm, AlgorithmType.Sidewinder);
+	t.true(typeof maze.string === 'string');
+	console.log(`Sidewinder(10,10)\n${maze.string}`);
+	console.log(maze.repr);
+});

@@ -62,3 +62,4 @@ This will resize the grid to a 5x5 maze and reapply the algorithm.
 ### Algorithms
 
 - [BinaryTree](docs/lib/binarytree.md)
+- [Sidewinder](docs/lib/sidewinder.md)
