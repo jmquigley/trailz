@@ -8,7 +8,7 @@ in the grid and choosing to carve a passage either north or south.
 #### Examples:
 
 ```javascript
-import {Algorithm, Maze} from 'trailblazer';
+import {AlgorithmType, Maze} from 'trailz';
 
 const maze = new Maze(10, 10, Algorithm.BinaryTree);
 console.log(maze.string);

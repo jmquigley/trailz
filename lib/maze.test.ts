@@ -3,12 +3,34 @@
 import test from 'ava';
 import {AlgorithmType, Maze} from '../index';
 
-test('Creates an Maze object instance', t => {
+test('Creates an Maze object instance using BinaryTree', t => {
 	const maze = new Maze(10, 10);
 	t.truthy(maze);
+	t.is(maze.cols, 10);
+	t.is(maze.rows, 10);
+	t.is(maze.algorithm, AlgorithmType.BinaryTree);
 	t.true(typeof maze.string === 'string');
+	console.log(`BinaryTree(10,10)\n${maze.string}`);
 
-	console.log(maze.string);
 	maze.rebuild(AlgorithmType.BinaryTree);
-	console.log(maze.string);
+	t.is(maze.cols, 10);
+	t.is(maze.rows, 10);
+	t.is(maze.algorithm, AlgorithmType.BinaryTree);
+	console.log(`BinaryTree(10,10) rebuild =>\n${maze.string}`);
+
+	maze.resize(5, 5);
+	t.is(maze.cols, 5);
+	t.is(maze.rows, 5);
+	t.is(maze.algorithm, AlgorithmType.BinaryTree);
+	console.log(`BinaryTree(5,5) resize =>\n${maze.string}`);
+});
+
+test('Create a maze with bad parameters for sizing', t => {
+	const maze = new Maze(-1, -1);
+
+	t.truthy(maze);
+	t.is(maze.cols, 1);
+	t.is(maze.rows, 1);
+	t.is(maze.algorithm, AlgorithmType.BinaryTree);
+	console.log(`BinaryTree(1,1) resize =>\n${maze.string}`);
 });

@@ -1,16 +1,16 @@
 {
-  "name": "trailblazer",
-  "version": "0.0.2",
+  "name": "trailz",
+  "version": "0.0.0",
   "author": "jmquigley <jmquigley@outlook.com>",
   "description": "A library for generating mazes",
   "private": false,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jmquigley/trailblazer"
+    "url": "https://github.com/jmquigley/trailz"
   },
   "bugs": {
-    "url": "https://github.com/jmquigley/trailblazer/issues"
+    "url": "https://github.com/jmquigley/trailz/issues"
   },
   "engines": {
     "node": ">=7.5"
@@ -34,7 +34,7 @@
   "main": "./index.js",
   "types": "./index.d.ts",
   "bin": {
-    "trailblazer": "./cli.js"
+    "trailz": "./cli.js"
   },
   "scripts": {
     "all": "yarn install && yarn run clean && yarn run lint && yarn run build && yarn run docs && yarn test && yarn run report",
