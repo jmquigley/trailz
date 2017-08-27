@@ -10,7 +10,7 @@ in the grid and choosing to carve a passage either north or south.
 ```javascript
 import {AlgorithmType, Maze} from 'trailz';
 
-const maze = new Maze(10, 10, Algorithm.BinaryTree);
+const maze = new Maze(10, 10, AlgorithmType.BinaryTree);
 console.log(maze.string);
 ```
 

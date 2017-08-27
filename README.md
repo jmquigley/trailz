@@ -26,6 +26,11 @@ To install as an application dependency:
 $ yarn add trailz
 ```
 
+To install as a global dependency for CLI use (options below):
+```
+$ yarn global add trailz
+```
+
 To build the app and run all tests:
 ```
 $ yarn run all
@@ -36,12 +41,50 @@ $ yarn run all
 
 To use the library create an instance of the `Maze` class with the size requirements and algorithm type.  It will automatically generate the maze and save it within a grid.  The contents of the maze can be retrieved by using the `.string` or `.repr` properties to get the contents.  The `.string` will give an ASCII string representation of the maze.  The `.repr` method will return a two dimensional array that contains the representation of that cell.  This representation is 1 of 16 possible representations for a cell (for drawing purposes).
 
+```
++---+---+---+---+---+---+---+---+---+---+
+|                                       |
++---+   +   +   +   +   +   +---+---+   +
+|       |   |   |   |   |   |           |
++---+---+   +   +   +---+---+---+---+   +
+|           |   |   |                   |
++   +---+---+   +---+   +---+   +---+   +
+|   |           |       |       |       |
++---+---+---+---+   +   +   +   +---+   +
+|                   |   |   |   |       |
++---+   +   +   +---+---+   +   +   +   +
+|       |   |   |           |   |   |   |
++---+---+   +   +   +   +---+---+---+   +
+|           |   |   |   |               |
++   +---+   +   +---+   +---+   +---+   +
+|   |       |   |       |       |       |
++   +   +---+---+   +---+   +---+---+   +
+|   |   |           |       |           |
++   +   +   +---+   +---+---+   +   +   +
+|   |   |   |       |           |   |   |
++---+---+---+---+---+---+---+---+---+---+
+
+ 11,  8,  8,  8,  8,  8,  8, 10, 10, 12
+ 11,  6,  5,  5,  5,  7,  7, 11, 10,  4
+  9, 10,  6,  5,  7,  9, 10,  8, 10,  4
+  7, 11, 10,  6,  9,  4,  9,  4, 11,  4
+ 11,  8,  8,  8,  6,  7,  5,  5,  9,  4
+ 11,  6,  5,  5,  9,  8,  6,  7,  7,  5
+  9, 10,  4,  5,  7,  5, 11,  8, 10,  4
+  5,  9,  6,  7,  9,  6,  9,  6, 11,  4
+  5,  5,  9, 10,  4, 11,  6,  9,  8,  4
+  7,  7,  7, 11,  6, 11, 10,  6,  7,  7
+```
+
+![SREPR Values](srepr-values.png)
+
+
 ### Usage
 
 ```javascript
 import {AlgorithmType, Maze} from 'trailz';
 
-const maze = new Maze(10, 10, Algorithm.BinaryTree);
+const maze = new Maze(10, 10, AlgorithmType.BinaryTree);
 console.log(maze.string);
 ```
 
