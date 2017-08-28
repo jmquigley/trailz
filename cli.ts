@@ -4,14 +4,26 @@
 
 import * as fs from 'fs-extra';
 import {nl} from 'util.toolbox';
-import {Maze} from './index';
+import {AlgorithmType, getAlgorithmType, Maze} from './index';
+
+const usage: string[] = [
+	'Usage: $0 -r {#} -c {#} -o {file.txt} -a {BinaryTree} -v',
+	'',
+	'Algorithms:'
+];
+
+for (const it in AlgorithmType) {
+	if (AlgorithmType.hasOwnProperty(it)) {
+		usage.push(` - ${it}`);
+	}
+}
 
 const yargs = require('yargs')
-	.usage('Usage: $0 -r {#} -c {#} -o {file.txt} -a {BinaryTree} -v')
-	.describe('alg', 'The algorithm to use for the generation')
-	.alias('alg', 'a')
-	.nargs('alg', 1)
-	.default('alg', 'BinaryTree')
+	.usage(usage.join(nl))
+	.describe('algorithm', 'The algorithm to use for the generation (listed above)')
+	.alias('algorithm', 'a')
+	.nargs('algorithm', 1)
+	.default('algorithm', 'BinaryTree')
 	.describe('cols', 'The number of columns in the maze')
 	.alias('cols', 'c')
 	.nargs('cols', 1)
@@ -31,7 +43,7 @@ const yargs = require('yargs')
 	.showHelpOnFail(false, 'Specify --help for available options');
 
 const argv = yargs.argv;
-const maze = new Maze(argv.rows, argv.cols, argv.algorithm);
+const maze = new Maze(argv.rows, argv.cols, getAlgorithmType(argv.algorithm));
 
 fs.writeFileSync(argv.output, maze.string + nl + nl + maze.srepr + nl);
 

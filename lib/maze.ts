@@ -48,6 +48,8 @@ export class Maze {
 		if (cols < 1) cols = 1;
 
 		this.resize(rows, cols, algorithm);
+
+		console.log(`Finished creating maze with ${this.algorithm}`);
 	}
 
 	/**

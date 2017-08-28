@@ -126,7 +126,7 @@ This will create a 25x25 maze using the [Sidewinder](docs/lib/sidewinder.md) alg
 - [Cell](docs/lib/cell.md)
 - [Grid](docs/lib/grid.md)
 - [Maze](docs/lib/maze.md)
-
+- [Algorithm](docs/lib/algorithm.md)
 
 ## Algorithms
 

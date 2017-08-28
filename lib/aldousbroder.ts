@@ -34,7 +34,6 @@ export class AldousBroder implements Algorithm {
 
 		while (unvisited > 0) {
 			const neighbor = _.sample(cell.neighbors);
-			console.log(`cell: ${String(cell)}, neighbors: ${cell.neighbors}`);
 
 			if (neighbor.linksEmpty) {
 				cell.link(neighbor);

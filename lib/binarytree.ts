@@ -37,8 +37,7 @@ export class BinaryTree implements Algorithm {
 			if (cell.north) neighbors.push(cell.north);
 			if (cell.east) neighbors.push(cell.east);
 
-			const idx: number = _.random(neighbors.length);
-			const neighbor: Cell = neighbors[idx];
+			const neighbor: Cell = _.sample(neighbors);
 
 			if (neighbor) {
 				cell.link(neighbor);
