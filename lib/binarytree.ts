@@ -22,7 +22,7 @@
 
 'use strict';
 
-import {getRandomInt} from 'util.toolbox';
+import * as _ from 'lodash';
 import {Algorithm} from './algorithm';
 import {Cell} from './cell';
 import {Grid} from './grid';
@@ -37,7 +37,7 @@ export class BinaryTree implements Algorithm {
 			if (cell.north) neighbors.push(cell.north);
 			if (cell.east) neighbors.push(cell.east);
 
-			const idx: number = getRandomInt(0, neighbors.length);
+			const idx: number = _.random(neighbors.length);
 			const neighbor: Cell = neighbors[idx];
 
 			if (neighbor) {

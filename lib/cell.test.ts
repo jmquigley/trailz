@@ -20,6 +20,7 @@ test('Test creation of a single Cell container', t => {
 
 	t.is(cell.links.length, 1);
 	t.is(cell2.links.length, 1);
+	t.false(cell.linksEmpty);
 
 	t.true(cell.linked(cell2));
 	t.true(cell2.linked(cell));
@@ -28,6 +29,7 @@ test('Test creation of a single Cell container', t => {
 
 	t.is(cell.links.length, 0);
 	t.is(cell2.links.length, 0);
+	t.true(cell.linksEmpty);
 
 	t.false(cell.linked(cell2));
 	t.false(cell2.linked(cell));
@@ -76,4 +78,23 @@ test('Test bitmap representations for a cell', t => {
 	t.is(cell.repr, 14);
 	cell.unlink(cell.west);
 	t.is(cell.repr, 15);
+});
+
+test('Test Cell neighbors', t => {
+	const cell = new Cell(0, 0);
+	const neighbor = new Cell(1, 1);
+
+	t.truthy(cell);
+	t.truthy(neighbor);
+	t.true(cell.linksEmpty);
+	t.is(cell.neighbors.length, 0);
+
+	cell.link(neighbor);
+	cell.north = neighbor;
+	t.false(cell.linksEmpty);
+	t.is(cell.neighbors.length, 1);
+
+	cell.south = neighbor;
+	t.false(cell.linksEmpty);
+	t.is(cell.neighbors.length, 2);
 });

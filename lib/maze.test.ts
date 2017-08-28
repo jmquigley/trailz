@@ -49,3 +49,14 @@ test('Creates a Maze object instance using Sidewinder', t => {
 	console.log(`Sidewinder(10,10)\n${maze.string}`);
 	console.log(maze.srepr);
 });
+
+test('Creates a Maze object instance using AldousBroder', t => {
+	const maze = new Maze(10, 10, AlgorithmType.AldousBroder);
+	t.truthy(maze);
+	t.is(maze.cols, 10);
+	t.is(maze.rows, 10 );
+	t.is(maze.algorithm, AlgorithmType.AldousBroder);
+	t.true(typeof maze.string === 'string');
+	console.log(`AldousBroder(10,10)\n${maze.string}`);
+	console.log(maze.srepr);
+});

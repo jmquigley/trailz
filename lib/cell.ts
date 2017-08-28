@@ -42,6 +42,13 @@ export class Cell {
 	}
 
 	/**
+	 * @return {boolean} true if there are links from this cell, otherwise false
+	 */
+	get linksEmpty(): boolean {
+		return this._links.size === 0;
+	}
+
+	/**
 	 * @return {Cell[]} the list of valid neighbors for this cell.
 	 */
 	get neighbors(): Cell[] {

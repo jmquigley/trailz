@@ -1,6 +1,7 @@
 'use strict';
 
-import {getRandomIntInclusive, nl} from 'util.toolbox';
+import * as _ from 'lodash';
+import {nl} from 'util.toolbox';
 import {Cell} from './cell';
 
 /**
@@ -46,10 +47,7 @@ export class Grid {
 	 * @return {Cell} a random cell location from the grid
 	 */
 	get random(): Cell {
-		const row: number = getRandomIntInclusive(0, this.rows - 1);
-		const col: number = getRandomIntInclusive(0, this.cols - 1);
-
-		return this.at(row, col);
+		return this.at(_.random(this.rows - 1), _.random(this.cols - 1));
 	}
 
 	/**

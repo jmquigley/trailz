@@ -23,7 +23,7 @@
 
 'use strict';
 
-import {getRandomInt} from 'util.toolbox';
+import * as _ from 'lodash';
 import {Algorithm} from './algorithm';
 import {Cell} from './cell';
 import {Grid} from './grid';
@@ -41,11 +41,11 @@ export class Sidewinder implements Algorithm {
 
 				const atEastBoundary: boolean = (cell.east == null);
 				const atNorthBoundary: boolean = (cell.north == null);
-				const closeOut: boolean = atEastBoundary || (!atNorthBoundary && getRandomInt(0, 3) === 0);
+				const closeOut: boolean = atEastBoundary || (!atNorthBoundary && _.random(3) === 0);
 
 				if (closeOut) {
-					const member = run[getRandomInt(0, run.length)];
-					if (member.north) {
+					const member = _.sample(run);
+					if (member && member.north) {
 						member.link(member.north);
 					}
 					run = [];

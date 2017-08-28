@@ -19,6 +19,7 @@
 import {sprintf} from 'sprintf-js';
 import {nl} from 'util.toolbox';
 import {
+	AldousBroder,
 	Algorithm,
 	AlgorithmType,
 	BinaryTree,
@@ -34,6 +35,7 @@ export class Maze {
 
 	private _algorithm: AlgorithmType;
 	private _algorithms: Algorithms = {
+		[AlgorithmType.AldousBroder]: new AldousBroder(),
 		[AlgorithmType.BinaryTree]: new BinaryTree(),
 		[AlgorithmType.Sidewinder]: new Sidewinder()
 	};

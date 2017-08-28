@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "fs-extra": "^4.0.1",
+    "lodash": "^4.17.4",
     "sprintf-js": "^1.1.1",
     "util.pkgwrap": "0.0.67",
     "util.toolbox": "^0.0.42",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "4.0.0",
+    "@types/lodash": "^4.14.74",
     "@types/node": "^8.0.25",
     "@types/sprintf-js": "0.0.27",
     "@types/yargs": "^8.0.2",

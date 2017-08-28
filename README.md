@@ -130,5 +130,6 @@ This will create a 25x25 maze using the [Sidewinder](docs/lib/sidewinder.md) alg
 
 ## Algorithms
 
+- [AldousBroder](docs/lib/aldousbroder.md)
 - [BinaryTree](docs/lib/binarytree.md)
 - [Sidewinder](docs/lib/sidewinder.md)
