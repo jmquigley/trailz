@@ -2,6 +2,7 @@ import {AldousBroder} from './aldousbroder';
 import {BinaryTree} from './binarytree';
 import {Grid} from './grid';
 import {Sidewinder} from './sidewinder';
+import {Wilsons} from './wilsons';
 
 export interface Algorithm {
 	process(grid: Grid): Grid;
@@ -10,7 +11,8 @@ export interface Algorithm {
 export enum AlgorithmType {
 	AldousBroder = 'AldousBroder',
 	BinaryTree = 'BinaryTree',
-	Sidewinder = 'Sidewinder'
+	Sidewinder = 'Sidewinder',
+	Wilsons = 'Wilsons'
 }
 
 /**
@@ -38,6 +40,10 @@ export function getAlgorithmType(name: string): AlgorithmType {
 		case 'SIDEWINDER':
 			return AlgorithmType.Sidewinder;
 
+		case 'WI':
+		case 'WILSONS':
+			return AlgorithmType.Wilsons;
+
 		case 'BT':
 		case 'BINARYTREE':
 		default:
@@ -48,5 +54,6 @@ export function getAlgorithmType(name: string): AlgorithmType {
 export {
 	AldousBroder,
 	BinaryTree,
-	Sidewinder
+	Sidewinder,
+	Wilsons
 };

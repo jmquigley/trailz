@@ -7,6 +7,7 @@ This class represents an array of cells by row and column
 
 * [Grid](#Grid)
     * [.cols](#Grid+cols) ⇒ <code>number</code>
+    * [.flatten](#Grid+flatten) ⇒ <code>Array.&lt;Cell&gt;</code>
     * [.random](#Grid+random) ⇒ <code>Cell</code>
     * [.repr](#Grid+repr) ⇒ <code>Array.&lt;Array.&lt;number&gt;&gt;</code>
     * [.rows](#Grid+rows) ⇒ <code>number</code>
@@ -19,6 +20,11 @@ This class represents an array of cells by row and column
 ### grid.cols ⇒ <code>number</code>
 **Kind**: instance property of [<code>Grid</code>](#Grid)  
 **Returns**: <code>number</code> - the total number of columns in the grid container  
+<a name="Grid+flatten"></a>
+
+### grid.flatten ⇒ <code>Array.&lt;Cell&gt;</code>
+**Kind**: instance property of [<code>Grid</code>](#Grid)  
+**Returns**: <code>Array.&lt;Cell&gt;</code> - an array copy of all cells in the grid as a 1D array.  
 <a name="Grid+random"></a>
 
 ### grid.random ⇒ <code>Cell</code>

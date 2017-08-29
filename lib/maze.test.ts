@@ -60,3 +60,14 @@ test('Creates a Maze object instance using AldousBroder', t => {
 	console.log(`AldousBroder(10,10)\n${maze.string}`);
 	console.log(maze.srepr);
 });
+
+test('Creates a Maze object instance using Wilsons algorithm', t => {
+	const maze = new Maze(10, 10, AlgorithmType.Wilsons);
+	t.truthy(maze);
+	t.is(maze.cols, 10);
+	t.is(maze.rows, 10 );
+	t.is(maze.algorithm, AlgorithmType.Wilsons);
+	t.true(typeof maze.string === 'string');
+	console.log(`Wilsons(10,10)\n${maze.string}`);
+	console.log(maze.srepr);
+});

@@ -26,4 +26,10 @@ test('Test retrieval of the algorithm type', t => {
 	t.is(getAlgorithmType('SIDEWINDER'), AlgorithmType.Sidewinder);
 	t.is(getAlgorithmType('SW'), AlgorithmType.Sidewinder);
 	t.is(getAlgorithmType('sw'), AlgorithmType.Sidewinder);
+
+	t.is(getAlgorithmType('Wilsons'), AlgorithmType.Wilsons);
+	t.is(getAlgorithmType('wilsons'), AlgorithmType.Wilsons);
+	t.is(getAlgorithmType('WILSONS'), AlgorithmType.Wilsons);
+	t.is(getAlgorithmType('WI'), AlgorithmType.Wilsons);
+	t.is(getAlgorithmType('wi'), AlgorithmType.Wilsons);
 });

@@ -10,9 +10,10 @@ import {Cell} from './cell';
 export class Grid {
 
 	private _cols: number;
-	private _rows: number;
+	private _flat: Cell[];
 	private _grid: Cell[][];
 	private _repr: number[][];
+	private _rows: number;
 
 	constructor(rows: number, cols: number) {
 		this._rows = rows;
@@ -22,6 +23,8 @@ export class Grid {
 
 		this._grid = new Array(this.rows);
 		this._repr = new Array(this.rows);
+		this._flat = new Array(this.size);
+
 		for (let row = 0; row < this.rows; row++) {
 			this._grid[row] = new Array(cols);
 			this._repr[row] = new Array(cols);
@@ -41,6 +44,13 @@ export class Grid {
 	 */
 	get cols(): number {
 		return this._cols;
+	}
+
+	/**
+	 * @return {Cell[]} an array copy of all cells in the grid as a 1D array.
+	 */
+	get flatten(): Cell[] {
+		return this._flat.slice();
 	}
 
 	/**
@@ -98,10 +108,13 @@ export class Grid {
 	 * reapplied.
 	 */
 	public reset(): void {
+		this._flat = [];
+
 		for (let row = 0; row < this.rows; row++) {
 			for (let col = 0; col < this.cols; col++) {
 				const cell = this.at(row, col);
 				cell.reset();
+				this._flat.push(cell);
 
 				cell.north = this.at(row - 1, col);
 				cell.south = this.at(row + 1, col);
@@ -119,10 +132,7 @@ export class Grid {
 			let bottom = '+';
 
 			for (let col = 0; col < this.cols; col++) {
-				let cell = this.at(row, col);
-				if (cell == null) {
-					cell = new Cell(-1, -1);
-				}
+				const cell = this.at(row, col);
 
 				const body = '   ';
 				const eastBoundary = cell.linked(cell.east) ? ' ' : '|';

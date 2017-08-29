@@ -23,7 +23,8 @@ import {
 	Algorithm,
 	AlgorithmType,
 	BinaryTree,
-	Sidewinder
+	Sidewinder,
+	Wilsons
 } from './algorithm';
 import {Grid} from './grid';
 
@@ -37,7 +38,8 @@ export class Maze {
 	private _algorithms: Algorithms = {
 		[AlgorithmType.AldousBroder]: new AldousBroder(),
 		[AlgorithmType.BinaryTree]: new BinaryTree(),
-		[AlgorithmType.Sidewinder]: new Sidewinder()
+		[AlgorithmType.Sidewinder]: new Sidewinder(),
+		[AlgorithmType.Wilsons]: new Wilsons()
 	};
 
 	private _grid: Grid;

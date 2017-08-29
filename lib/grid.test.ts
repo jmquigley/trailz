@@ -8,20 +8,22 @@ test('Create and verify the grid component', t => {
 	const rows = 10;
 
 	const grid = new Grid(cols, rows);
+	let cell: Cell;
 
 	t.truthy(grid);
 	t.is(grid.rows, rows);
 	t.is(grid.cols, cols);
 	t.is(grid.size, rows * cols);
 
+	const flat = grid.flatten;
 	for (let row = 0; row < rows; row++) {
 		for (let col = 0; col < cols; col++) {
-			t.truthy(grid.at(row, col));
-			t.true(grid.at(row, col) instanceof Cell);
+			cell = grid.at(row, col);
+			t.truthy(cell);
+			t.true(cell instanceof Cell);
+			t.is(cell, flat[(row * cols) + col]);
 		}
 	}
-
-	let cell: Cell;
 
 	// validate top left corner
 	cell = grid.at(0, 0);
@@ -126,4 +128,21 @@ test('Test retrieval of random cells within the grid', t => {
 	for (let i = 0; i < n; i++) {
 		t.truthy(grid.random instanceof Cell);
 	}
+});
+
+test('Try to retrieve a bad location from the grid', t => {
+	let cell: Cell;
+	const cols = 10;
+	const rows = 10;
+
+	const grid = new Grid(cols, rows);
+
+	cell = grid.at(1, 1);
+	t.truthy(cell);
+
+	cell = grid.at(-1, -1);
+	t.falsy(cell);
+
+	cell = grid.at(-5, -5);
+	t.falsy(cell);
 });
