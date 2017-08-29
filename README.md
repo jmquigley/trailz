@@ -91,7 +91,7 @@ console.log(maze.string);
 This will create a new instance of a maze using the BinaryTree algorithm.  A new instance of the maze can be rebuilt without creating a new instance with:
 
 ```javascript
-maze.rebuild(Algorithm.BinaryTree);
+maze.rebuild(AlgorithmType.BinaryTree);
 ```
 
 This will reset the grid and reapply the BinaryTree algorithm to the grid.  The grid can be resized and rebuilt too.
