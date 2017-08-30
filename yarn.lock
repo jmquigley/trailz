@@ -3607,6 +3607,14 @@ util-deprecate@~1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
 
+util.ds@^0.0.29:
+  version "0.0.29"
+  resolved "https://registry.yarnpkg.com/util.ds/-/util.ds-0.0.29.tgz#f5cedb1b97e199f0915f950f74dda954bcd81d2d"
+  dependencies:
+    fs-extra "^4.0.1"
+    sprintf-js "^1.1.1"
+    util.pkgwrap "0.0.67"
+
 util.pkgwrap@0.0.59:
   version "0.0.59"
   resolved "https://registry.yarnpkg.com/util.pkgwrap/-/util.pkgwrap-0.0.59.tgz#e0d04941d32a944ddf239e21d739c6da42f0d1aa"

@@ -27,6 +27,12 @@ test('Test retrieval of the algorithm type', t => {
 	t.is(getAlgorithmType('HK'), AlgorithmType.HuntAndKill);
 	t.is(getAlgorithmType('hk'), AlgorithmType.HuntAndKill);
 
+	t.is(getAlgorithmType('RecursiveBacktracker'), AlgorithmType.RecursiveBacktracker);
+	t.is(getAlgorithmType('recursivebacktracker'), AlgorithmType.RecursiveBacktracker);
+	t.is(getAlgorithmType('RECURSIVEBACKTRACKER'), AlgorithmType.RecursiveBacktracker);
+	t.is(getAlgorithmType('RB'), AlgorithmType.RecursiveBacktracker);
+	t.is(getAlgorithmType('rb'), AlgorithmType.RecursiveBacktracker);
+
 	t.is(getAlgorithmType('Sidewinder'), AlgorithmType.Sidewinder);
 	t.is(getAlgorithmType('sidewinder'), AlgorithmType.Sidewinder);
 	t.is(getAlgorithmType('SIDEWINDER'), AlgorithmType.Sidewinder);

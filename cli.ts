@@ -7,7 +7,7 @@ import {nl} from 'util.toolbox';
 import {AlgorithmType, getAlgorithmType, Maze} from './index';
 
 const usage: string[] = [
-	'Usage: $0 -r {#} -c {#} -o {file.txt} -a {BinaryTree} -v',
+	'Usage: $0 -r {#} -c {#} -o {file.txt} -a {RecursiveBacktracker} -v',
 	'',
 	'Algorithms:'
 ];
@@ -23,7 +23,7 @@ const yargs = require('yargs')
 	.describe('algorithm', 'The algorithm to use for the generation (listed above)')
 	.alias('algorithm', 'a')
 	.nargs('algorithm', 1)
-	.default('algorithm', 'BinaryTree')
+	.default('algorithm', 'RecursiveBacktracker')
 	.describe('cols', 'The number of columns in the maze')
 	.alias('cols', 'c')
 	.nargs('cols', 1)

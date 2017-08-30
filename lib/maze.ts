@@ -24,6 +24,7 @@ import {
 	AlgorithmType,
 	BinaryTree,
 	HuntAndKill,
+	RecursiveBacktracker,
 	Sidewinder,
 	Wilsons
 } from './algorithm';
@@ -40,13 +41,14 @@ export class Maze {
 		[AlgorithmType.AldousBroder]: new AldousBroder(),
 		[AlgorithmType.BinaryTree]: new BinaryTree(),
 		[AlgorithmType.HuntAndKill]: new HuntAndKill(),
+		[AlgorithmType.RecursiveBacktracker]: new RecursiveBacktracker(),
 		[AlgorithmType.Sidewinder]: new Sidewinder(),
 		[AlgorithmType.Wilsons]: new Wilsons()
 	};
 
 	private _grid: Grid;
 
-	constructor(rows: number, cols: number, algorithm: AlgorithmType = AlgorithmType.BinaryTree) {
+	constructor(rows: number, cols: number, algorithm: AlgorithmType = AlgorithmType.RecursiveBacktracker) {
 
 		if (rows < 1) rows = 1;
 		if (cols < 1) cols = 1;
