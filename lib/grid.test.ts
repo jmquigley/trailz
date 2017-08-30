@@ -7,7 +7,7 @@ test('Create and verify the grid component', t => {
 	const cols = 10;
 	const rows = 10;
 
-	const grid = new Grid(cols, rows);
+	const grid = new Grid(cols, rows, true);
 	let cell: Cell;
 
 	t.truthy(grid);

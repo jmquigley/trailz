@@ -4,20 +4,24 @@ import * as _ from 'lodash';
 import {nl} from 'util.toolbox';
 import {Cell} from './cell';
 
+const pkg = require('../package.json');
+
 /**
  * This class represents an array of cells by row and column
  */
 export class Grid {
 
 	private _cols: number;
+	private _debug: boolean;
 	private _flat: Cell[];
 	private _grid: Cell[][];
 	private _repr: number[][];
 	private _rows: number;
 
-	constructor(rows: number, cols: number) {
+	constructor(rows: number, cols: number, debug: boolean = false) {
 		this._rows = rows;
 		this._cols = cols;
+		this._debug = debug;
 
 		let cell;
 
@@ -134,7 +138,13 @@ export class Grid {
 			for (let col = 0; col < this.cols; col++) {
 				const cell = this.at(row, col);
 
-				const body = '   ';
+				let body;
+				if (pkg.debug || this._debug) {
+					body = `${cell.row},${cell.col}`;
+				} else {
+					body = '   ';
+				}
+
 				const eastBoundary = cell.linked(cell.east) ? ' ' : '|';
 				top += body + eastBoundary;
 

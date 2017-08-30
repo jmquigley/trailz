@@ -23,6 +23,7 @@ import {
 	Algorithm,
 	AlgorithmType,
 	BinaryTree,
+	HuntAndKill,
 	Sidewinder,
 	Wilsons
 } from './algorithm';
@@ -38,6 +39,7 @@ export class Maze {
 	private _algorithms: Algorithms = {
 		[AlgorithmType.AldousBroder]: new AldousBroder(),
 		[AlgorithmType.BinaryTree]: new BinaryTree(),
+		[AlgorithmType.HuntAndKill]: new HuntAndKill(),
 		[AlgorithmType.Sidewinder]: new Sidewinder(),
 		[AlgorithmType.Wilsons]: new Wilsons()
 	};

@@ -71,3 +71,14 @@ test('Creates a Maze object instance using Wilsons algorithm', t => {
 	console.log(`Wilsons(10,10)\n${maze.string}`);
 	console.log(maze.srepr);
 });
+
+test('Creates a Maze object instance using the HuntAndKill algorithm', t => {
+	const maze = new Maze(10, 10, AlgorithmType.HuntAndKill);
+	t.truthy(maze);
+	t.is(maze.cols, 10);
+	t.is(maze.rows, 10 );
+	t.is(maze.algorithm, AlgorithmType.HuntAndKill);
+	t.true(typeof maze.string === 'string');
+	console.log(`HuntAndKill(10,10)\n${maze.string}`);
+	console.log(maze.srepr);
+});

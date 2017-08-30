@@ -6,6 +6,9 @@
 
 'use strict';
 
+/**
+ * A class that represents a single grid cell.
+ */
 export class Cell {
 
 	private _links: Map<Cell, boolean> = new Map<Cell, boolean>();
@@ -49,7 +52,7 @@ export class Cell {
 	}
 
 	/**
-	 * @return {Cell[]} the list of valid neighbors for this cell.
+	 * @return {Cell[]} the list of valid neighbors for this cell
 	 */
 	get neighbors(): Cell[] {
 		const l: Cell[] = [];
@@ -58,6 +61,34 @@ export class Cell {
 		if (this._south) l.push(this._south);
 		if (this._east) l.push(this._east);
 		if (this._west) l.push(this._west);
+
+		return l;
+	}
+
+	/**
+	 * @return {Cell[]} the list of valid neighbors that have been visited
+	 */
+	get visitedNeighbors(): Cell[] {
+		const l: Cell[] = [];
+
+		if (this._north && !this._north.linksEmpty) l.push(this._north);
+		if (this._south && !this._south.linksEmpty) l.push(this._south);
+		if (this._east && !this._east.linksEmpty) l.push(this._east);
+		if (this._west && !this._west.linksEmpty) l.push(this._west);
+
+		return l;
+	}
+
+	/**
+	 * @return {Cell[]} the list of valid neighbors that have not been used
+	 */
+	get unvisitedNeighbors(): Cell[] {
+		const l: Cell[] = [];
+
+		if (this._north && this._north.linksEmpty) l.push(this._north);
+		if (this._south && this._south.linksEmpty) l.push(this._south);
+		if (this._east && this._east.linksEmpty) l.push(this._east);
+		if (this._west && this._west.linksEmpty) l.push(this._west);
 
 		return l;
 	}

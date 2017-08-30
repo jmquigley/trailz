@@ -21,6 +21,12 @@ test('Test retrieval of the algorithm type', t => {
 	t.is(getAlgorithmType('AB'), AlgorithmType.AldousBroder);
 	t.is(getAlgorithmType('ab'), AlgorithmType.AldousBroder);
 
+	t.is(getAlgorithmType('HuntAndKill'), AlgorithmType.HuntAndKill);
+	t.is(getAlgorithmType('huntandkill'), AlgorithmType.HuntAndKill);
+	t.is(getAlgorithmType('HUNTANDKILL'), AlgorithmType.HuntAndKill);
+	t.is(getAlgorithmType('HK'), AlgorithmType.HuntAndKill);
+	t.is(getAlgorithmType('hk'), AlgorithmType.HuntAndKill);
+
 	t.is(getAlgorithmType('Sidewinder'), AlgorithmType.Sidewinder);
 	t.is(getAlgorithmType('sidewinder'), AlgorithmType.Sidewinder);
 	t.is(getAlgorithmType('SIDEWINDER'), AlgorithmType.Sidewinder);
