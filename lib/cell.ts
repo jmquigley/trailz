@@ -66,34 +66,6 @@ export class Cell {
 	}
 
 	/**
-	 * @return {Cell[]} the list of valid neighbors that have been visited
-	 */
-	get visitedNeighbors(): Cell[] {
-		const l: Cell[] = [];
-
-		if (this._north && !this._north.linksEmpty) l.push(this._north);
-		if (this._south && !this._south.linksEmpty) l.push(this._south);
-		if (this._east && !this._east.linksEmpty) l.push(this._east);
-		if (this._west && !this._west.linksEmpty) l.push(this._west);
-
-		return l;
-	}
-
-	/**
-	 * @return {Cell[]} the list of valid neighbors that have not been used
-	 */
-	get unvisitedNeighbors(): Cell[] {
-		const l: Cell[] = [];
-
-		if (this._north && this._north.linksEmpty) l.push(this._north);
-		if (this._south && this._south.linksEmpty) l.push(this._south);
-		if (this._east && this._east.linksEmpty) l.push(this._east);
-		if (this._west && this._west.linksEmpty) l.push(this._west);
-
-		return l;
-	}
-
-	/**
 	 * Each side of a cell (square) in the maze is either *on* or *off* when
 	 * carving into the maze.  This function will take the values of each
 	 * side and compute a number that represents how the side will be drawn.
@@ -134,6 +106,34 @@ export class Cell {
 	 */
 	get row(): number {
 		return this._row;
+	}
+
+	/**
+	 * @return {Cell[]} the list of valid neighbors that have been visited
+	 */
+	get visitedNeighbors(): Cell[] {
+		const l: Cell[] = [];
+
+		if (this._north && !this._north.linksEmpty) l.push(this._north);
+		if (this._south && !this._south.linksEmpty) l.push(this._south);
+		if (this._east && !this._east.linksEmpty) l.push(this._east);
+		if (this._west && !this._west.linksEmpty) l.push(this._west);
+
+		return l;
+	}
+
+	/**
+	 * @return {Cell[]} the list of valid neighbors that have not been used
+	 */
+	get unvisitedNeighbors(): Cell[] {
+		const l: Cell[] = [];
+
+		if (this._north && this._north.linksEmpty) l.push(this._north);
+		if (this._south && this._south.linksEmpty) l.push(this._south);
+		if (this._east && this._east.linksEmpty) l.push(this._east);
+		if (this._west && this._west.linksEmpty) l.push(this._west);
+
+		return l;
 	}
 
 	get north(): Cell {

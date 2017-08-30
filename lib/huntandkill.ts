@@ -47,7 +47,6 @@ export class HuntAndKill implements Algorithm {
 				current.link(neighbor);
 				current = neighbor;
 			} else {
-				console.log(`Hunt phase`);
 				current = null;
 
 				for (const cell of grid) {

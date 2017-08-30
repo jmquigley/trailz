@@ -43,11 +43,21 @@ const yargs = require('yargs')
 	.showHelpOnFail(false, 'Specify --help for available options');
 
 const argv = yargs.argv;
-const maze = new Maze(argv.rows, argv.cols, getAlgorithmType(argv.algorithm));
+const alg = getAlgorithmType(argv.algorithm);
+const maze = new Maze(argv.rows, argv.cols, alg);
 
-fs.writeFileSync(argv.output, maze.string + nl + nl + maze.srepr + nl);
+const out: string[] = [];
+
+out.push(`${alg}(${maze.rows}, ${maze.cols})`);
+out.push(`Dead ends: ${maze.grid.deadends.length}`);
+out.push('');
+out.push(maze.string);
+out.push('');
+out.push(maze.srepr);
+out.push('');
+
+fs.writeFileSync(argv.output, out.join(nl));
 
 if (argv.verbose) {
-	console.log(maze.string + nl);
-	console.log(maze.srepr + nl);
+	console.log(out.join(nl));
 }

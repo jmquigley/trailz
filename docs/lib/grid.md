@@ -7,6 +7,7 @@ This class represents an array of cells by row and column
 
 * [Grid](#Grid)
     * [.cols](#Grid+cols) ⇒ <code>number</code>
+    * [.deadends](#Grid+deadends) ⇒ <code>Array.&lt;Cell&gt;</code>
     * [.flatten](#Grid+flatten) ⇒ <code>Array.&lt;Cell&gt;</code>
     * [.random](#Grid+random) ⇒ <code>Cell</code>
     * [.repr](#Grid+repr) ⇒ <code>Array.&lt;Array.&lt;number&gt;&gt;</code>
@@ -20,6 +21,11 @@ This class represents an array of cells by row and column
 ### grid.cols ⇒ <code>number</code>
 **Kind**: instance property of [<code>Grid</code>](#Grid)  
 **Returns**: <code>number</code> - the total number of columns in the grid container  
+<a name="Grid+deadends"></a>
+
+### grid.deadends ⇒ <code>Array.&lt;Cell&gt;</code>
+**Kind**: instance property of [<code>Grid</code>](#Grid)  
+**Returns**: <code>Array.&lt;Cell&gt;</code> - a list of cells that are dead ends within the grid  
 <a name="Grid+flatten"></a>
 
 ### grid.flatten ⇒ <code>Array.&lt;Cell&gt;</code>

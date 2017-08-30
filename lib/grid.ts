@@ -51,6 +51,24 @@ export class Grid {
 	}
 
 	/**
+	 * @return {Cell[]} a list of cells that are dead ends within the grid
+	 */
+	get deadends(): Cell[] {
+		const out: Cell[] = [];
+
+		for (let row = 0; row < this.rows; row++) {
+			for (let col = 0; col < this.cols; col++) {
+				const cell: Cell = this.at(row, col);
+				if (cell.links.length === 1) {
+					out.push(cell);
+				}
+			}
+		}
+
+		return out;
+	}
+
+	/**
 	 * @return {Cell[]} an array copy of all cells in the grid as a 1D array.
 	 */
 	get flatten(): Cell[] {

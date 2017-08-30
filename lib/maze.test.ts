@@ -26,6 +26,8 @@ test('Creates an Maze object instance using BinaryTree', t => {
 	t.is(maze.algorithm, AlgorithmType.BinaryTree);
 	console.log(`BinaryTree(5,5) resize =>\n${maze.string}`);
 	console.log(maze.srepr);
+
+	t.truthy(maze.grid.deadends);
 });
 
 test('Create a maze with bad parameters for sizing', t => {

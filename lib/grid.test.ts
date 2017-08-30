@@ -94,6 +94,7 @@ test('Create and verify the grid component', t => {
 	t.is(cell.neighbors.length, 2);
 
 	t.true(typeof grid.toString() === 'string');
+	t.truthy(grid.deadends);
 });
 
 test('Test the iterator and toString function for a Cell', t => {

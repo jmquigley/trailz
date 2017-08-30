@@ -10,10 +10,10 @@ A single cell reference that is used within a grid.
         * [.links](#module_Cell..Cell+links) ⇒ <code>Array.&lt;Cell&gt;</code>
         * [.linksEmpty](#module_Cell..Cell+linksEmpty) ⇒ <code>boolean</code>
         * [.neighbors](#module_Cell..Cell+neighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
-        * [.visitedNeighbors](#module_Cell..Cell+visitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
-        * [.unvisitedNeighbors](#module_Cell..Cell+unvisitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
         * [.repr](#module_Cell..Cell+repr) ⇒ <code>number</code>
         * [.row](#module_Cell..Cell+row) ⇒ <code>number</code>
+        * [.visitedNeighbors](#module_Cell..Cell+visitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
+        * [.unvisitedNeighbors](#module_Cell..Cell+unvisitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
         * [.link(cell, bidi)](#module_Cell..Cell+link) ⇒ <code>Cell</code>
         * [.linked(cell)](#module_Cell..Cell+linked) ⇒ <code>boolean</code>
         * [.reset()](#module_Cell..Cell+reset)
@@ -31,10 +31,10 @@ A class that represents a single grid cell.
     * [.links](#module_Cell..Cell+links) ⇒ <code>Array.&lt;Cell&gt;</code>
     * [.linksEmpty](#module_Cell..Cell+linksEmpty) ⇒ <code>boolean</code>
     * [.neighbors](#module_Cell..Cell+neighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
-    * [.visitedNeighbors](#module_Cell..Cell+visitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
-    * [.unvisitedNeighbors](#module_Cell..Cell+unvisitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
     * [.repr](#module_Cell..Cell+repr) ⇒ <code>number</code>
     * [.row](#module_Cell..Cell+row) ⇒ <code>number</code>
+    * [.visitedNeighbors](#module_Cell..Cell+visitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
+    * [.unvisitedNeighbors](#module_Cell..Cell+unvisitedNeighbors) ⇒ <code>Array.&lt;Cell&gt;</code>
     * [.link(cell, bidi)](#module_Cell..Cell+link) ⇒ <code>Cell</code>
     * [.linked(cell)](#module_Cell..Cell+linked) ⇒ <code>boolean</code>
     * [.reset()](#module_Cell..Cell+reset)
@@ -60,16 +60,6 @@ A class that represents a single grid cell.
 #### cell.neighbors ⇒ <code>Array.&lt;Cell&gt;</code>
 **Kind**: instance property of [<code>Cell</code>](#module_Cell..Cell)  
 **Returns**: <code>Array.&lt;Cell&gt;</code> - the list of valid neighbors for this cell  
-<a name="module_Cell..Cell+visitedNeighbors"></a>
-
-#### cell.visitedNeighbors ⇒ <code>Array.&lt;Cell&gt;</code>
-**Kind**: instance property of [<code>Cell</code>](#module_Cell..Cell)  
-**Returns**: <code>Array.&lt;Cell&gt;</code> - the list of valid neighbors that have been visited  
-<a name="module_Cell..Cell+unvisitedNeighbors"></a>
-
-#### cell.unvisitedNeighbors ⇒ <code>Array.&lt;Cell&gt;</code>
-**Kind**: instance property of [<code>Cell</code>](#module_Cell..Cell)  
-**Returns**: <code>Array.&lt;Cell&gt;</code> - the list of valid neighbors that have not been used  
 <a name="module_Cell..Cell+repr"></a>
 
 #### cell.repr ⇒ <code>number</code>
@@ -102,6 +92,16 @@ Each of the patterns represent the 16 possible patterns for a square.
 #### cell.row ⇒ <code>number</code>
 **Kind**: instance property of [<code>Cell</code>](#module_Cell..Cell)  
 **Returns**: <code>number</code> - the row position of this cell within the grid  
+<a name="module_Cell..Cell+visitedNeighbors"></a>
+
+#### cell.visitedNeighbors ⇒ <code>Array.&lt;Cell&gt;</code>
+**Kind**: instance property of [<code>Cell</code>](#module_Cell..Cell)  
+**Returns**: <code>Array.&lt;Cell&gt;</code> - the list of valid neighbors that have been visited  
+<a name="module_Cell..Cell+unvisitedNeighbors"></a>
+
+#### cell.unvisitedNeighbors ⇒ <code>Array.&lt;Cell&gt;</code>
+**Kind**: instance property of [<code>Cell</code>](#module_Cell..Cell)  
+**Returns**: <code>Array.&lt;Cell&gt;</code> - the list of valid neighbors that have not been used  
 <a name="module_Cell..Cell+link"></a>
 
 #### cell.link(cell, bidi) ⇒ <code>Cell</code>

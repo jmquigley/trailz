@@ -64,10 +64,31 @@ export class Maze {
 	}
 
 	/**
+	 * @return {number} the number of columns in this maze
+	 */
+	get cols(): number {
+		return this._grid.cols;
+	}
+
+	/**
+	 * @return {Grid} returns a reference to the grid within the Maze instance
+	 */
+	get grid(): Grid {
+		return this._grid;
+	}
+
+	/**
 	 * @return {number[][]} a 2D array that represents how each cell is drawn
 	 */
 	get repr(): number[][] {
 		return this._grid.repr;
+	}
+
+	/**
+	 * @return {number} the number of rows in this maze
+	 */
+	get rows(): number {
+		return this._grid.rows;
 	}
 
 	/**
@@ -87,20 +108,6 @@ export class Maze {
 		}
 
 		return out.join(nl);
-	}
-
-	/**
-	 * @return {number} the number of columns in this maze
-	 */
-	get cols(): number {
-		return this._grid.cols;
-	}
-
-	/**
-	 * @return {number} the number of rows in this maze
-	 */
-	get rows(): number {
-		return this._grid.rows;
 	}
 
 	/**
