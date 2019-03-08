@@ -2,7 +2,7 @@
 
 > A library for generating mazes
 
-[![Build Status](https://travis-ci.org/jmquigley/trailz.svg?branch=master)](https://travis-ci.org/jmquigley/trailz)
+[![build](https://circleci.com/gh/jmquigley/trailz/tree/master.svg?style=shield)](https://circleci.com/gh/jmquigley/trailz/tree/master)
 [![tslint code style](https://img.shields.io/badge/code_style-TSlint-5ed9c7.svg)](https://palantir.github.io/tslint/)
 [![Test Runner](https://img.shields.io/badge/testing-ava-blue.svg)](https://github.com/avajs/ava)
 [![NPM](https://img.shields.io/npm/v/trailz.svg)](https://www.npmjs.com/package/trailz)

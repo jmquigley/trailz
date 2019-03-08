@@ -19,15 +19,14 @@
  * @module AldousBroder
  */
 
-'use strict';
+"use strict";
 
-import * as _ from 'lodash';
-import {Algorithm} from './algorithm';
-import {Cell} from './cell';
-import {Grid} from './grid';
+import * as _ from "lodash";
+import {Algorithm} from "./algorithm";
+import {Cell} from "./cell";
+import {Grid} from "./grid";
 
 export class AldousBroder implements Algorithm {
-
 	public process(grid: Grid): Grid {
 		let cell: Cell = grid.random;
 		let unvisited = grid.size - 1;

@@ -1,16 +1,15 @@
-'use strict';
+"use strict";
 
-import * as _ from 'lodash';
-import {nl} from 'util.toolbox';
-import {Cell} from './cell';
+import * as _ from "lodash";
+import {nl} from "util.constants";
+import {Cell} from "./cell";
 
-const pkg = require('../package.json');
+const pkg = require("../package.json");
 
 /**
  * This class represents an array of cells by row and column
  */
 export class Grid {
-
 	private _cols: number;
 	private _debug: boolean;
 	private _flat: Cell[];
@@ -118,7 +117,11 @@ export class Grid {
 	 * then null.
 	 */
 	public at(row: number, col: number): Cell {
-		if ((row < 0 || row > this.rows - 1) || (col < 0 || col > this.cols - 1)) {
+		if (
+			row < 0 ||
+			row > this.rows - 1 ||
+			(col < 0 || col > this.cols - 1)
+		) {
 			return null;
 		}
 
@@ -147,11 +150,11 @@ export class Grid {
 	}
 
 	public toString(): string {
-		const s: string[] = ['+' + '---+'.repeat(this.cols)];
+		const s: string[] = ["+" + "---+".repeat(this.cols)];
 
 		for (let row = 0; row < this.rows; row++) {
-			let top = '|';
-			let bottom = '+';
+			let top = "|";
+			let bottom = "+";
 
 			for (let col = 0; col < this.cols; col++) {
 				const cell = this.at(row, col);
@@ -160,14 +163,14 @@ export class Grid {
 				if (pkg.debug || this._debug) {
 					body = `${cell.row},${cell.col}`;
 				} else {
-					body = '   ';
+					body = "   ";
 				}
 
-				const eastBoundary = cell.linked(cell.east) ? ' ' : '|';
+				const eastBoundary = cell.linked(cell.east) ? " " : "|";
 				top += body + eastBoundary;
 
-				const southBoundary = cell.linked(cell.south) ? '   ' : '---';
-				const corner = '+';
+				const southBoundary = cell.linked(cell.south) ? "   " : "---";
+				const corner = "+";
 				bottom += southBoundary + corner;
 			}
 

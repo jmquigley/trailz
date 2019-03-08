@@ -1,56 +1,85 @@
 {
-  "name": "trailz",
-  "version": "0.0.6",
-  "author": "jmquigley <jmquigley@outlook.com>",
-  "description": "A library for generating mazes",
-  "private": false,
-  "license": "MIT",
-  "debug": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jmquigley/trailz"
-  },
-  "bugs": {
-    "url": "https://github.com/jmquigley/trailz/issues"
-  },
-  "engines": {
-    "node": ">=7.5"
-  },
-  "dependencies": {
-    "fs-extra": "^4.0.1",
-    "lodash": "^4.17.4",
-    "sprintf-js": "^1.1.1",
-    "util.ds": "^0.0.29",
-    "util.pkgwrap": "0.0.67",
-    "util.toolbox": "^0.0.42",
-    "yargs": "^8.0.2"
-  },
-  "devDependencies": {
-    "@types/fs-extra": "4.0.0",
-    "@types/lodash": "^4.14.74",
-    "@types/node": "^8.0.25",
-    "@types/sprintf-js": "0.0.27",
-    "@types/yargs": "^8.0.2",
-    "ava": "^0.22.0",
-    "coveralls": "^2.13.1",
-    "nyc": "^11.1.0",
-    "tslint": "^5.7.0",
-    "typescript": "^2.4.2"
-  },
-  "main": "./index.js",
-  "types": "./index.d.ts",
-  "bin": {
-    "trailz": "./cli.js"
-  },
-  "scripts": {
-    "all": "yarn install && yarn run clean && yarn run lint && yarn run build && yarn run docs && yarn test && yarn run report",
-    "build": "pkgwrap --build",
-    "clean": "pkgwrap --clean",
-    "coverage": "pkgwrap --coverage",
-    "docs": "pkgwrap --docs",
-    "lint": "pkgwrap --lint",
-    "postinstall": "pkgwrap --postinstall",
-    "report": "pkgwrap --reporting",
-    "test": "pkgwrap --testing --ava"
-  }
+	"name": "trailz",
+	"version": "0.0.6",
+	"author": "jmquigley <jmquigley@outlook.com>",
+	"description": "A library for generating mazes",
+	"private": false,
+	"license": "MIT",
+	"debug": false,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jmquigley/trailz"
+	},
+	"bugs": {
+		"url": "https://github.com/jmquigley/trailz/issues"
+	},
+	"engines": {
+		"node": ">=7.5"
+	},
+	"bin": {
+		"trailz": "./cli.js"
+	},
+	"files": [
+		"cli.js",
+		"index.js",
+		"index.d.ts",
+		"lib",
+		"!lib/*.js.map"
+	],
+	"dependencies": {
+		"fs-extra": "^7.0.1",
+		"lodash": "^4.17.11",
+		"sprintf-js": "https://github.com/jmquigley/sprintf.js.git#dc62b1c",
+		"util.constants": "^0.0.22",
+		"util.ds": "^0.0.53",
+		"util.toolbox": "^0.0.73",
+		"yargs": "^13.2.2"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.2.3",
+		"@babel/core": "^7.3.4",
+		"@babel/plugin-transform-runtime": "^7.3.4",
+		"@babel/preset-env": "^7.3.4",
+		"@babel/preset-typescript": "^7.3.3",
+		"@babel/runtime": "^7.3.4",
+		"@types/fs-extra": "5.0.5",
+		"@types/jest": "^24.0.9",
+		"@types/lodash": "^4.14.122",
+		"@types/node": "^11.10.5",
+		"@types/sprintf-js": "1.1.2",
+		"@types/yargs": "^12.0.9",
+		"babel-plugin-espower": "^3.0.1",
+		"coveralls": "^3.0.3",
+		"jest": "^24.3.0",
+		"power-assert": "^1.6.1",
+		"prettier": "^1.16.4",
+		"tslint": "^5.13.1",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^3.3.3333",
+		"util.pkgwrap": "0.0.104"
+	},
+	"pkgwrap": {
+		"cleanup": [
+			"cli.js",
+			"cli.d.ts",
+			"docs",
+			"lib/*.d.ts",
+			"lib/*.js.map",
+			"lib/*.js",
+			"trailz*.tgz"
+		]
+	},
+	"scripts": {
+		"all": "yarn install && yarn build && yarn docs && yarn test && yarn package",
+		"build": "yarn clean && yarn lint && yarn prettier && pkgwrap --build",
+		"clean": "pkgwrap --clean",
+		"clean:dist": "yarn clean && rimraf node_modules/ yarn.lock",
+		"coverage": "pkgwrap --coverage --jest",
+		"docs": "pkgwrap --docs",
+		"lint": "pkgwrap --lint",
+		"package": "npm pack --dry-run",
+		"prepublishOnly": "yarn run all",
+		"prettier": "prettier --write \"**/*.{ts,tsx,js,json,yaml,yml,css}\"",
+		"test": "jest"
+	}
 }

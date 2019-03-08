@@ -14,10 +14,10 @@
  * @module Maze
  */
 
-'use strict';
+"use strict";
 
-import {sprintf} from 'sprintf-js';
-import {nl} from 'util.toolbox';
+import {sprintf} from "sprintf-js";
+import {nl} from "util.constants";
 import {
 	AldousBroder,
 	Algorithm,
@@ -27,15 +27,14 @@ import {
 	RecursiveBacktracker,
 	Sidewinder,
 	Wilsons
-} from './algorithm';
-import {Grid} from './grid';
+} from "./algorithm";
+import {Grid} from "./grid";
 
 interface Algorithms {
 	[key: string]: Algorithm;
 }
 
 export class Maze {
-
 	private _algorithm: AlgorithmType;
 	private _algorithms: Algorithms = {
 		[AlgorithmType.AldousBroder]: new AldousBroder(),
@@ -48,8 +47,11 @@ export class Maze {
 
 	private _grid: Grid;
 
-	constructor(rows: number, cols: number, algorithm: AlgorithmType = AlgorithmType.RecursiveBacktracker) {
-
+	constructor(
+		rows: number,
+		cols: number,
+		algorithm: AlgorithmType = AlgorithmType.RecursiveBacktracker
+	) {
 		if (rows < 1) rows = 1;
 		if (cols < 1) cols = 1;
 
@@ -104,9 +106,9 @@ export class Maze {
 		for (let row = 0; row < this.rows; row++) {
 			line = [];
 			for (let col = 0; col < this.cols; col++) {
-				line.push(sprintf('%3d', repr[row][col]));
+				line.push(sprintf("%3d", repr[row][col]));
 			}
-			out.push(line.join(','));
+			out.push(line.join(","));
 		}
 
 		return out.join(nl);
@@ -139,7 +141,11 @@ export class Maze {
 	 * @param [algorithm] {AlgorithmType} the maze algorithm that will be applied to the
 	 * grid.  If one is not given, then the initial algorithm is reapplied.
 	 */
-	public resize(rows: number, cols: number, algorithm: AlgorithmType = this.algorithm) {
+	public resize(
+		rows: number,
+		cols: number,
+		algorithm: AlgorithmType = this.algorithm
+	) {
 		this._grid = new Grid(rows, cols);
 		this.rebuild(algorithm);
 	}

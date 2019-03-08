@@ -7,8 +7,7 @@ valid name is not given.
 
 **Kind**: global function  
 **Returns**: <code>AlgorithmType</code> - the proper enum for an algorithm used by Maze  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| name | <code>string</code> | the name of the requested algorithm |
+- name <code>string</code> - the name of the requested algorithm
 

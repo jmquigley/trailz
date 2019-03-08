@@ -60,11 +60,10 @@ of the grid, then null is returned.
 **Kind**: instance method of [<code>Grid</code>](#Grid)  
 **Returns**: <code>Cell</code> - the cell within the grid location.  If outside the range
 then null.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| row | <code>number</code> | the row in the grid |
-| col | <code>number</code> | the column in the grid |
+- row <code>number</code> - the row in the grid
+- col <code>number</code> - the column in the grid
 
 <a name="Grid+reset"></a>
 

@@ -20,16 +20,15 @@
  * @module RecursiveBacktracker
  */
 
-'use strict';
+"use strict";
 
-import * as _ from 'lodash';
-import {Stack} from 'util.ds';
-import {Algorithm} from './algorithm';
-import {Cell} from './cell';
-import {Grid} from './grid';
+import * as _ from "lodash";
+import {Stack} from "util.ds";
+import {Algorithm} from "./algorithm";
+import {Cell} from "./cell";
+import {Grid} from "./grid";
 
 export class RecursiveBacktracker implements Algorithm {
-
 	public process(grid: Grid): Grid {
 		const stack = new Stack<Cell>();
 		stack.push(grid.random);

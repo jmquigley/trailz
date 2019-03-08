@@ -1,47 +1,56 @@
-'use strict';
+"use strict";
 
-import test from 'ava';
-import {AlgorithmType, getAlgorithmType} from '../index';
+const assert = require("power-assert");
 
-test('Test retrieval of the algorithm type', t => {
+import {AlgorithmType, getAlgorithmType} from "../index";
 
-	t.is(getAlgorithmType(null), AlgorithmType.BinaryTree);
-	t.is(getAlgorithmType('     '), AlgorithmType.BinaryTree);
-	t.is(getAlgorithmType(''), AlgorithmType.BinaryTree);
+test("Test retrieval of the algorithm type", () => {
+	assert(getAlgorithmType(null) === AlgorithmType.BinaryTree);
+	assert(getAlgorithmType("     ") === AlgorithmType.BinaryTree);
+	assert(getAlgorithmType("") === AlgorithmType.BinaryTree);
 
-	t.is(getAlgorithmType('BinaryTree'), AlgorithmType.BinaryTree);
-	t.is(getAlgorithmType('binarytree'), AlgorithmType.BinaryTree);
-	t.is(getAlgorithmType('BINARYTREE'), AlgorithmType.BinaryTree);
-	t.is(getAlgorithmType('BT'), AlgorithmType.BinaryTree);
-	t.is(getAlgorithmType('bt'), AlgorithmType.BinaryTree);
+	assert(getAlgorithmType("BinaryTree") === AlgorithmType.BinaryTree);
+	assert(getAlgorithmType("binarytree") === AlgorithmType.BinaryTree);
+	assert(getAlgorithmType("BINARYTREE") === AlgorithmType.BinaryTree);
+	assert(getAlgorithmType("BT") === AlgorithmType.BinaryTree);
+	assert(getAlgorithmType("bt") === AlgorithmType.BinaryTree);
 
-	t.is(getAlgorithmType('AldousBroder'), AlgorithmType.AldousBroder);
-	t.is(getAlgorithmType('aldousbroder'), AlgorithmType.AldousBroder);
-	t.is(getAlgorithmType('ALDOUSBRODER'), AlgorithmType.AldousBroder);
-	t.is(getAlgorithmType('AB'), AlgorithmType.AldousBroder);
-	t.is(getAlgorithmType('ab'), AlgorithmType.AldousBroder);
+	assert(getAlgorithmType("AldousBroder") === AlgorithmType.AldousBroder);
+	assert(getAlgorithmType("aldousbroder") === AlgorithmType.AldousBroder);
+	assert(getAlgorithmType("ALDOUSBRODER") === AlgorithmType.AldousBroder);
+	assert(getAlgorithmType("AB") === AlgorithmType.AldousBroder);
+	assert(getAlgorithmType("ab") === AlgorithmType.AldousBroder);
 
-	t.is(getAlgorithmType('HuntAndKill'), AlgorithmType.HuntAndKill);
-	t.is(getAlgorithmType('huntandkill'), AlgorithmType.HuntAndKill);
-	t.is(getAlgorithmType('HUNTANDKILL'), AlgorithmType.HuntAndKill);
-	t.is(getAlgorithmType('HK'), AlgorithmType.HuntAndKill);
-	t.is(getAlgorithmType('hk'), AlgorithmType.HuntAndKill);
+	assert(getAlgorithmType("HuntAndKill") === AlgorithmType.HuntAndKill);
+	assert(getAlgorithmType("huntandkill") === AlgorithmType.HuntAndKill);
+	assert(getAlgorithmType("HUNTANDKILL") === AlgorithmType.HuntAndKill);
+	assert(getAlgorithmType("HK") === AlgorithmType.HuntAndKill);
+	assert(getAlgorithmType("hk") === AlgorithmType.HuntAndKill);
 
-	t.is(getAlgorithmType('RecursiveBacktracker'), AlgorithmType.RecursiveBacktracker);
-	t.is(getAlgorithmType('recursivebacktracker'), AlgorithmType.RecursiveBacktracker);
-	t.is(getAlgorithmType('RECURSIVEBACKTRACKER'), AlgorithmType.RecursiveBacktracker);
-	t.is(getAlgorithmType('RB'), AlgorithmType.RecursiveBacktracker);
-	t.is(getAlgorithmType('rb'), AlgorithmType.RecursiveBacktracker);
+	assert(
+		getAlgorithmType("RecursiveBacktracker") ===
+			AlgorithmType.RecursiveBacktracker
+	);
+	assert(
+		getAlgorithmType("recursivebacktracker") ===
+			AlgorithmType.RecursiveBacktracker
+	);
+	assert(
+		getAlgorithmType("RECURSIVEBACKTRACKER") ===
+			AlgorithmType.RecursiveBacktracker
+	);
+	assert(getAlgorithmType("RB") === AlgorithmType.RecursiveBacktracker);
+	assert(getAlgorithmType("rb") === AlgorithmType.RecursiveBacktracker);
 
-	t.is(getAlgorithmType('Sidewinder'), AlgorithmType.Sidewinder);
-	t.is(getAlgorithmType('sidewinder'), AlgorithmType.Sidewinder);
-	t.is(getAlgorithmType('SIDEWINDER'), AlgorithmType.Sidewinder);
-	t.is(getAlgorithmType('SW'), AlgorithmType.Sidewinder);
-	t.is(getAlgorithmType('sw'), AlgorithmType.Sidewinder);
+	assert(getAlgorithmType("Sidewinder") === AlgorithmType.Sidewinder);
+	assert(getAlgorithmType("sidewinder") === AlgorithmType.Sidewinder);
+	assert(getAlgorithmType("SIDEWINDER") === AlgorithmType.Sidewinder);
+	assert(getAlgorithmType("SW") === AlgorithmType.Sidewinder);
+	assert(getAlgorithmType("sw") === AlgorithmType.Sidewinder);
 
-	t.is(getAlgorithmType('Wilsons'), AlgorithmType.Wilsons);
-	t.is(getAlgorithmType('wilsons'), AlgorithmType.Wilsons);
-	t.is(getAlgorithmType('WILSONS'), AlgorithmType.Wilsons);
-	t.is(getAlgorithmType('WI'), AlgorithmType.Wilsons);
-	t.is(getAlgorithmType('wi'), AlgorithmType.Wilsons);
+	assert(getAlgorithmType("Wilsons") === AlgorithmType.Wilsons);
+	assert(getAlgorithmType("wilsons") === AlgorithmType.Wilsons);
+	assert(getAlgorithmType("WILSONS") === AlgorithmType.Wilsons);
+	assert(getAlgorithmType("WI") === AlgorithmType.Wilsons);
+	assert(getAlgorithmType("wi") === AlgorithmType.Wilsons);
 });

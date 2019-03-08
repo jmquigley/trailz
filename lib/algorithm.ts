@@ -1,22 +1,22 @@
-import {AldousBroder} from './aldousbroder';
-import {BinaryTree} from './binarytree';
-import {Grid} from './grid';
-import {HuntAndKill} from './huntandkill';
-import {RecursiveBacktracker} from './recursivebacktracker';
-import {Sidewinder} from './sidewinder';
-import {Wilsons} from './wilsons';
+import {AldousBroder} from "./aldousbroder";
+import {BinaryTree} from "./binarytree";
+import {Grid} from "./grid";
+import {HuntAndKill} from "./huntandkill";
+import {RecursiveBacktracker} from "./recursivebacktracker";
+import {Sidewinder} from "./sidewinder";
+import {Wilsons} from "./wilsons";
 
 export interface Algorithm {
 	process(grid: Grid): Grid;
 }
 
 export enum AlgorithmType {
-	AldousBroder = 'AldousBroder',
-	BinaryTree = 'BinaryTree',
-	HuntAndKill = 'HuntAndKill',
-	RecursiveBacktracker = 'RecursiveBacktracker',
-	Sidewinder = 'Sidewinder',
-	Wilsons = 'Wilsons'
+	AldousBroder = "AldousBroder",
+	BinaryTree = "BinaryTree",
+	HuntAndKill = "HuntAndKill",
+	RecursiveBacktracker = "RecursiveBacktracker",
+	Sidewinder = "Sidewinder",
+	Wilsons = "Wilsons"
 }
 
 /**
@@ -27,37 +27,35 @@ export enum AlgorithmType {
  * @return {AlgorithmType} the proper enum for an algorithm used by Maze
  */
 export function getAlgorithmType(name: string): AlgorithmType {
-
-	if (name && typeof name === 'string') {
+	if (name && typeof name === "string") {
 		name = name.trim().toUpperCase();
 	} else {
 		return AlgorithmType.BinaryTree;
 	}
 
 	switch (name.toUpperCase()) {
-
-		case 'AB':
-		case 'ALDOUSBRODER':
+		case "AB":
+		case "ALDOUSBRODER":
 			return AlgorithmType.AldousBroder;
 
-		case 'HK':
-		case 'HUNTANDKILL':
+		case "HK":
+		case "HUNTANDKILL":
 			return AlgorithmType.HuntAndKill;
 
-		case 'RB':
-		case 'RECURSIVEBACKTRACKER':
+		case "RB":
+		case "RECURSIVEBACKTRACKER":
 			return AlgorithmType.RecursiveBacktracker;
 
-		case 'SW':
-		case 'SIDEWINDER':
+		case "SW":
+		case "SIDEWINDER":
 			return AlgorithmType.Sidewinder;
 
-		case 'WI':
-		case 'WILSONS':
+		case "WI":
+		case "WILSONS":
 			return AlgorithmType.Wilsons;
 
-		case 'BT':
-		case 'BINARYTREE':
+		case "BT":
+		case "BINARYTREE":
 		default:
 			return AlgorithmType.BinaryTree;
 	}

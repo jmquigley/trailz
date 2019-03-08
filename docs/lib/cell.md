@@ -110,11 +110,12 @@ between the two cells.
 
 **Kind**: instance method of [<code>Cell</code>](#module_Cell..Cell)  
 **Returns**: <code>Cell</code> - a reference to self  
+**Params**
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| cell | <code>Cell</code> |  | the cell to link to from this cell |
-| bidi | <code>boolean</code> | <code>true</code> | determines if the link is bidirectional.  If this is true, then the link is made from the cell back to this one.  It is on by default. |
+- cell <code>Cell</code> - the cell to link to from this cell
+- bidi <code>boolean</code> <code> = true</code> - determines if the link is bidirectional.  If this
+is true, then the link is made from the cell back to this one.  It is
+on by default.
 
 <a name="module_Cell..Cell+linked"></a>
 
@@ -124,10 +125,9 @@ Determines if the given cell is linked to this one.
 **Kind**: instance method of [<code>Cell</code>](#module_Cell..Cell)  
 **Returns**: <code>boolean</code> - true if the given cell is linked to this one, otherwise
 false.  
+**Params**
 
-| Param | Type | Description |
-| --- | --- | --- |
-| cell | <code>Cell</code> | the input cell to check against this cell |
+- cell <code>Cell</code> - the input cell to check against this cell
 
 <a name="module_Cell..Cell+reset"></a>
 
@@ -142,9 +142,10 @@ Removes the linkage between this cell and the given input cell.
 
 **Kind**: instance method of [<code>Cell</code>](#module_Cell..Cell)  
 **Returns**: <code>Cell</code> - a reference to self  
+**Params**
 
-| Param | Type | Default | Description |
-| --- | --- | --- | --- |
-| cell | <code>Cell</code> |  | the cell to link to from this cell |
-| bidi | <code>boolean</code> | <code>true</code> | determines if the link is bidirectional.  If this is true, then the link is made from the cell back to this one.  It is on by default. |
+- cell <code>Cell</code> - the cell to link to from this cell
+- bidi <code>boolean</code> <code> = true</code> - determines if the link is bidirectional.  If this
+is true, then the link is made from the cell back to this one.  It is
+on by default.
 

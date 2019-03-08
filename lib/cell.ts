@@ -4,13 +4,12 @@
  * @module Cell
  */
 
-'use strict';
+"use strict";
 
 /**
  * A class that represents a single grid cell.
  */
 export class Cell {
-
 	private _links: Map<Cell, boolean> = new Map<Cell, boolean>();
 
 	private _col: number;
@@ -91,12 +90,12 @@ export class Cell {
 	 * @return {number} a byte representation of the cell for drawing.
 	 */
 	get repr(): number {
-		let val: number = 15;  // Default all 4 sides "on"
+		let val: number = 15; // Default all 4 sides "on"
 
-		if (this.linked(this._north)) val &= 7;  // turn off "top"
-		if (this.linked(this.east)) val &= 11;   // turn off "right"
-		if (this.linked(this.south)) val &= 13;  // turn off "bottom"
-		if (this.linked(this.west)) val &= 14;   // turn off "left"
+		if (this.linked(this._north)) val &= 7; // turn off "top"
+		if (this.linked(this.east)) val &= 11; // turn off "right"
+		if (this.linked(this.south)) val &= 13; // turn off "bottom"
+		if (this.linked(this.west)) val &= 14; // turn off "left"
 
 		return val;
 	}
@@ -229,5 +228,4 @@ export class Cell {
 
 		return this;
 	}
-
 }

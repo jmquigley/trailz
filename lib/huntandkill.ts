@@ -25,15 +25,14 @@
  * @module HuntAndKill
  */
 
-'use strict';
+"use strict";
 
-import * as _ from 'lodash';
-import {Algorithm} from './algorithm';
-import {Cell} from './cell';
-import {Grid} from './grid';
+import * as _ from "lodash";
+import {Algorithm} from "./algorithm";
+import {Cell} from "./cell";
+import {Grid} from "./grid";
 
 export class HuntAndKill implements Algorithm {
-
 	public process(grid: Grid): Grid {
 		let current: Cell = grid.random;
 		let unvisitedNeighbors: Cell[];

@@ -20,17 +20,15 @@
  * @module BinaryTree
  */
 
-'use strict';
+"use strict";
 
-import * as _ from 'lodash';
-import {Algorithm} from './algorithm';
-import {Cell} from './cell';
-import {Grid} from './grid';
+import * as _ from "lodash";
+import {Algorithm} from "./algorithm";
+import {Cell} from "./cell";
+import {Grid} from "./grid";
 
 export class BinaryTree implements Algorithm {
-
 	public process(grid: Grid): Grid {
-
 		for (const cell of grid) {
 			const neighbors: Cell[] = [];
 

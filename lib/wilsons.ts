@@ -23,15 +23,14 @@
  * @module Wilsons
  */
 
-'use strict';
+"use strict";
 
-import * as _ from 'lodash';
-import {Algorithm} from './algorithm';
-import {Cell} from './cell';
-import {Grid} from './grid';
+import * as _ from "lodash";
+import {Algorithm} from "./algorithm";
+import {Cell} from "./cell";
+import {Grid} from "./grid";
 
 export class Wilsons implements Algorithm {
-
 	public process(grid: Grid): Grid {
 		const unvisited: Cell[] = grid.flatten;
 		const first = _.sample(unvisited);

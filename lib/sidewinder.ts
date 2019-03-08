@@ -21,17 +21,15 @@
  * @module Sidewinder
  */
 
-'use strict';
+"use strict";
 
-import * as _ from 'lodash';
-import {Algorithm} from './algorithm';
-import {Cell} from './cell';
-import {Grid} from './grid';
+import * as _ from "lodash";
+import {Algorithm} from "./algorithm";
+import {Cell} from "./cell";
+import {Grid} from "./grid";
 
 export class Sidewinder implements Algorithm {
-
 	public process(grid: Grid): Grid {
-
 		for (let row = 0; row < grid.rows; row++) {
 			let run = [];
 
@@ -39,9 +37,10 @@ export class Sidewinder implements Algorithm {
 				const cell: Cell = grid.at(row, col);
 				run.push(cell);
 
-				const atEastBoundary: boolean = (cell.east == null);
-				const atNorthBoundary: boolean = (cell.north == null);
-				const closeOut: boolean = atEastBoundary || (!atNorthBoundary && _.random(3) === 0);
+				const atEastBoundary: boolean = cell.east == null;
+				const atNorthBoundary: boolean = cell.north == null;
+				const closeOut: boolean =
+					atEastBoundary || (!atNorthBoundary && _.random(3) === 0);
 
 				if (closeOut) {
 					const member = _.sample(run);
