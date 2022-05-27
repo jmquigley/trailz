@@ -27,7 +27,7 @@
 		"!lib/*.js.map"
 	],
 	"dependencies": {
-		"fs-extra": "^7.0.1",
+		"fs-extra": "^8.0.0",
 		"lodash": "^4.17.11",
 		"sprintf-js": "https://github.com/jmquigley/sprintf.js.git#dc62b1c",
 		"util.constants": "^0.0.22",
